@@ -1,6 +1,6 @@
 # Personal Tildepot
 
-This repository contains my personal macOS configuration, managed with Tildepot. Resources managed include:
+This repository contains my personal macOS configuration, managed with [Tildepot](https://github.com/echocrow/tildepot). Resources managed include:
 
 - applications (bins & apps) via Homebrew
 - fonts and other minor tools via Homebrew
