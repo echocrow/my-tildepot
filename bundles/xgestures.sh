@@ -10,7 +10,7 @@ function INSTALL_SKIP() {
 }
 function INSTALL() {
   _xgestures_download_and_copy "$(_xgestures_load_dmg_url)"
-  ohai_success "Installed xGestures to [$XGESTURES_PREFPANE]."
+  TILDE::success "Installed xGestures to [$XGESTURES_PREFPANE]."
 }
 
 function UPDATE_SKIP() {
@@ -19,7 +19,7 @@ function UPDATE_SKIP() {
 }
 function UPDATE() {
   _xgestures_download_and_copy "$(_xgestures_load_dmg_url)"
-  ohai_success "Updated xGestures to [$(_xgestures_read_current_version)]."
+  TILDE::success "Updated xGestures to [$(_xgestures_read_current_version)]."
 }
 
 function _xgestures_read_current_version() {

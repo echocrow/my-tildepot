@@ -8,5 +8,5 @@ function INSTALL_SKIP() {
 }
 function INSTALL() {
   curl -fsSL https://iterm2.com/shell_integration/install_shell_integration.sh | SHELL='fish' bash
-  ohai_success "Installed iTerm2 shell integration."
+  TILDE::success "Installed iTerm2 shell integration."
 }
