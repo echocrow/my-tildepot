@@ -1,0 +1,144 @@
+mappings:
+  GOTO_LEFT: f13
+  GOTO_RIGHT: f15
+  VOL_DOWN: f11
+  VOL_UP: f12
+  UI: mouse4
+  MEDIA: mouse5
+  CLOSE: f19
+
+gestures:
+  GOTO_LEFT:
+    key_down: mac:smart-go-left:toggle:on
+    key_up: mac:smart-go-left:toggle:off
+  GOTO_RIGHT:
+    key_down: mac:smart-go-right:toggle:on
+    key_up: mac:smart-go-right:toggle:off
+  VOL_DOWN:
+    key_down: vol:down:toggle:on
+    key_up: vol:down:toggle:off
+  VOL_UP:
+    key_down: vol:up:toggle:on
+    key_up: vol:up:toggle:off
+  UI:
+    swipe_left: mac:left-space
+    swipe_right: mac:right-space
+    swipe_up: mac:mission-control
+    swipe_down: mac:app-windows
+    tap.tap: mac:desktop
+  MEDIA:
+    swipe_left: media:prev
+    swipe_right: media:next
+    swipe_up: mac:open-media-player
+    # tap: mac:smart-media-toggle
+    tap: media:toggle
+  CLOSE:
+    tap: mac:smart-close-window
+    hold: mac:quit-app
+
+actions:
+
+  vol:down:toggle:
+    type: toggle
+    action: vol:down
+    init-delay: 100
+    repeat-delay: 100
+  vol:up:toggle:
+    type: toggle
+    action: vol:up
+    init-delay: 100
+    repeat-delay: 100
+
+  io:scroll-left:
+    action: io:scroll
+    args: [-10, 0]
+  io:scroll-right:
+    action: io:scroll
+    args: [10, 0]
+
+  mac:prev-tab:
+    action: io:tap
+    args: [ctrl, shift, tab]
+  mac:next-tab:
+    action: io:tap
+    args: [ctrl, tab]
+
+  mac:hide-window:
+    action: io:tap
+    args: [cmd, h]
+  mac:close-window:
+    action: io:tap
+    args: [cmd, w]
+  mac:quit-app:
+    action: io:tap
+    args: [cmd, q]
+
+  mac:mission-control:
+    action: os:cmd
+    args: [open, /System/Applications/Mission Control.app]
+  mac:app-windows:
+    action: os:cmd
+    args: [open, /System/Applications/Mission Control.app, --args, 2]
+  mac:desktop:
+    action: os:cmd
+    args: [open, /System/Applications/Mission Control.app, --args, 1]
+  mac:left-space:
+    action: os:cmd
+    # args: [osascript, -e, tell application "System Events" to key code 123 using control down]
+    args: [osascript, ~/Scripts/AppleScript/Mission Controll - Left Space.scpt]
+  mac:right-space:
+    action: os:cmd
+    # args: [osascript, -e, tell application "System Events" to key code 124 using control down]
+    args: [osascript, ~/Scripts/AppleScript/Mission Controll - Right Space.scpt]
+
+  mac:open-media-player:
+    action: os:open
+    args: [~/Applications/YouTube Music.app]
+
+  mac:media-player:toggle:
+    action: os:cmd
+    # args: [osascript, -e, tell application "Spotify" to playpause]
+    args: [osascript, ~/lib/AppleScript/spotify-playpause.scpt]
+
+  mac:smart-media-toggle:
+    type: require-app
+    app: ~/Applications/YouTube Music.app
+    # do: media:toggle
+    do:
+      type: app-branch
+      branches:
+        ~/Applications/YouTube Music.app: mac:media-player:toggle
+      fallback: media:toggle
+    fallback: mac:media-player:toggle
+
+  mac:smart-close-window:
+    type: app-branch
+    branches:
+      /Applications/iTerm.app: null
+      /Applications/Notion Calendar.app: mac:quit-app
+      ~/Applications/YouTube Music.app: mac:hide-window
+    fallback: mac:close-window
+
+  mac:smart-go-left:
+    type: app-branch
+    branches:
+      /System/Library/CoreServices/Finder.app: io:scroll-left
+    fallback: mac:prev-tab
+  mac:smart-go-right:
+    type: app-branch
+    branches:
+      /System/Library/CoreServices/Finder.app: io:scroll-right
+    fallback: mac:next-tab
+
+settings:
+  # debug: true
+  gestures:
+    ttl: 250
+    cap: 2
+  swipes:
+    min-dist: 10
+    throttle: 300
+    poll-rate: 50
+  toggles:
+    init-delay: 250
+    repeat-delay: 200

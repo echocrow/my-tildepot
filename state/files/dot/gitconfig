@@ -1,0 +1,14 @@
+[user]
+	name = EchoCrow
+	email = 5488190+echocrow@users.noreply.github.com
+[core]
+	abbrev = 7
+	editor = subl -n -w
+	excludesfile = ~/.gitignore
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main

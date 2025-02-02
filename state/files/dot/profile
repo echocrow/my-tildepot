@@ -1,0 +1,10 @@
+# Add custom executables
+export PATH=$PATH:~/Scripts/bin
+
+# Use Sublime as text editor
+export EDITOR='subl -n -w'
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

@@ -1,0 +1,91 @@
+#!/bin/bash
+#
+# Pasteword
+# Copy a basic keychain password into the clipboard.
+
+# Strict Mode
+set -euo pipefail
+
+# Variables
+readonly SCRIPT_NAME="pasteword"
+readonly SCRIPT_VERSION="0.0.0"
+readonly SCRIPT_DESCRIPTION="Copy a basic keychain password into the clipboard."
+
+readonly SECURITY_SERVICE="pasteword"
+readonly PBCOPY_TTL=5
+
+function abort() {
+  printf "%s: " "$SCRIPT_NAME" >&2
+  printf "%s\n" "$@" >&2
+  exit 1
+}
+
+# Functions
+function print_usage() {
+  echo "Usage: $SCRIPT_NAME [command]"
+  echo
+  echo "$SCRIPT_DESCRIPTION"
+  echo
+  echo "Commands:"
+  echo "  help                  Display this help and exit."
+  echo "  version               Display version and exit."
+  echo "  list                  List all pastewords."
+  echo "  get [name]            Get a pasteword."
+  echo "  set [name] [value]    Set a pasteword."
+  echo "  delete [name]         Delete a pasteword."
+}
+
+function print_version() {
+  echo "$SCRIPT_NAME $SCRIPT_VERSION"
+  echo "$SCRIPT_DESCRIPTION"
+}
+
+function main_list() {
+  security dump-keychain | \
+    grep -A2 '0x00000007 <blob>="'"$SECURITY_SERVICE"'"' | \
+    grep '"acct"<blob>="' | \
+    sed -n 's/.*"acct"<blob>="\(.*\)".*/\1/p'
+}
+
+function main_get() {
+  local name="${1-}"
+  [[ -z "$name" ]] && abort "Missing name."
+  local pw; pw="$(security find-generic-password -s "$SECURITY_SERVICE" -a "$name" -w | tr -d '\n')"
+  printf '%s' "$pw" | pbcopy
+  sleep "$PBCOPY_TTL"
+  [[ "$(pbpaste)" == "$pw" ]] && printf '' | pbcopy
+}
+
+function main_set() {
+  local name="${1-}"
+  local value="${2-}"
+  [[ -z "$name" ]] && abort "Missing name."
+  [[ -z "$value" ]] && abort "Missing value."
+  security add-generic-password -s "$SECURITY_SERVICE" -a "$name" -w "$value" -U
+}
+
+function main_delete() {
+  local name="${1-}"
+  [[ -z "$name" ]] && abort "Missing name."
+  security delete-generic-password -s "$SECURITY_SERVICE" -a "$name"
+}
+
+# Main
+COMMAND="${1-help}"
+ [[ $# -gt 0 ]] && shift
+case "$COMMAND" in
+  help)
+    print_usage;;
+  version)
+    print_version;;
+  list)
+    main_list "$@";;
+  get)
+    main_get "$@";;
+  set)
+    main_set "$@";;
+  delete)
+    main_delete "$@";;
+  *)
+    abort "Unknown command: $COMMAND";;
+esac

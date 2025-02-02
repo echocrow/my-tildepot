@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Print the modification timestamp of a file
+
+stat -f '%m' "$@"
