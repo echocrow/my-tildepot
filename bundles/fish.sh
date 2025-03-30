@@ -1,3 +1,3 @@
 #!/bin/bash
 
-# Bundle inherited from tildepot.
+export INHERIT=fish

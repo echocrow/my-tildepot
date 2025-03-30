@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bundle inherited from tildepot.
+export INHERIT=files
 
 export FILES="
   [dot]
