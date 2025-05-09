@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export INHERIT=files
+export EXTEND='files-bundle@1.0.0-next.2'
 
 export FILES="
   [dot]

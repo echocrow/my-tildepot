@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-export INHERIT=brew
+export EXTEND='brew-bundle@1.0.0-next.2'

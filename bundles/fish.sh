@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-export INHERIT=fish
+export EXTEND='fish-bundle@1.0.0-next.2'
