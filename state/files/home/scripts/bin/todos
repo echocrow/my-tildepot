@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Print all TODOs in the current branch relative to the specified branch
 

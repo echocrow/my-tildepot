@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # date >> /Users/echocrow/Desktop/cron-log.txt
 # date +%s >> ~/Desktop/cron-log.txt
