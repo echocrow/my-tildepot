@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Tildepot bundle for iTerm2
 # https://iterm2.com/
