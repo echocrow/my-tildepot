@@ -11,15 +11,15 @@
 
 powerstate="$(pmset -g systemstate)"
 # posted='OMIT'
-if [[
+if [[ 
 	"$powerstate" =~ Current\ System\ Capabilities\ are:[a-zA-Z\ ]*\ Graphics &&
 	"$powerstate" =~ Current\ System\ Capabilities\ are:[a-zA-Z\ ]*\ Network &&
 	"$powerstate" =~ Current\ Power\ State:\ 4 &&
-	! "$powerstate" =~ Desired\ State:\ 2
-]]; then
+	! "$powerstate" =~ Desired\ State:\ 2 ]] \
+	; then
 	curl -v 'http://homeassistant.local:8123/api/webhook/MiniTytoOnline'
 	# posted='POST'
-# else
+	# else
 	# echo "BAD"
 fi
 exit 0

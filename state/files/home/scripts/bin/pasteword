@@ -41,16 +41,17 @@ function print_version() {
 }
 
 function main_list() {
-  security dump-keychain | \
-    grep -A2 '0x00000007 <blob>="'"$SECURITY_SERVICE"'"' | \
-    grep '"acct"<blob>="' | \
+  security dump-keychain |
+    grep -A2 '0x00000007 <blob>="'"$SECURITY_SERVICE"'"' |
+    grep '"acct"<blob>="' |
     sed -n 's/.*"acct"<blob>="\(.*\)".*/\1/p'
 }
 
 function main_get() {
   local name="${1-}"
   [[ -z "$name" ]] && abort "Missing name."
-  local pw; pw="$(security find-generic-password -s "$SECURITY_SERVICE" -a "$name" -w | tr -d '\n')"
+  local pw
+  pw="$(security find-generic-password -s "$SECURITY_SERVICE" -a "$name" -w | tr -d '\n')"
   printf '%s' "$pw" | pbcopy
   sleep "$PBCOPY_TTL"
   [[ "$(pbpaste)" == "$pw" ]] && printf '' | pbcopy
@@ -72,20 +73,27 @@ function main_delete() {
 
 # Main
 COMMAND="${1-help}"
- [[ $# -gt 0 ]] && shift
+[[ $# -gt 0 ]] && shift
 case "$COMMAND" in
-  help)
-    print_usage;;
-  version)
-    print_version;;
-  list)
-    main_list "$@";;
-  get)
-    main_get "$@";;
-  set)
-    main_set "$@";;
-  delete)
-    main_delete "$@";;
-  *)
-    abort "Unknown command: $COMMAND";;
+help)
+  print_usage
+  ;;
+version)
+  print_version
+  ;;
+list)
+  main_list "$@"
+  ;;
+get)
+  main_get "$@"
+  ;;
+set)
+  main_set "$@"
+  ;;
+delete)
+  main_delete "$@"
+  ;;
+*)
+  abort "Unknown command: $COMMAND"
+  ;;
 esac
