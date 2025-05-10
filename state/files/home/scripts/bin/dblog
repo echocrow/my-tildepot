@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+#
+# Get daily dev posts from Twist.
+
+# Strict Mode
+set -euo pipefail
+
+readonly SECURITY_SERVICE="dblog"
+
+readonly THREAD_TITLE="Meeting - Daily Dev"
+
+# Convert a date to timestamp.
+function fmt_timestamp() {
+    date -j -f "%Y-%m-%d" "$1" "+%s"
+}
+
+# Get the datetime of the first day of the previous month.
+function get_prev_month_date() {
+    date -v-1m -v1d +%Y-%m-%d
+}
+
+# Get or retrieve access token.
+ACCESS_TOKEN_CACHE=""
+function get_access_token() {
+    [[ -z "$ACCESS_TOKEN_CACHE" ]] && ACCESS_TOKEN_CACHE="$(get_or_request_api_token)"
+    echo "$ACCESS_TOKEN_CACHE"
+}
+
+# Get or retrieve access token.
+ACCOUNT_ID_CACHE=""
+function get_account_id() {
+    [[ -z "$ACCOUNT_ID_CACHE" ]] && ACCOUNT_ID_CACHE="$(api '/users/get_session_user' | jq -r '.id')"
+    echo "$ACCOUNT_ID_CACHE"
+}
+
+# Make an authenticated request to the Twist API.
+function api() {
+    local path="$1"
+    local params=("${@:2}")
+
+    local query=''
+    [[ ${#params[@]} -gt 0 ]] && query="?$(
+        IFS='&'
+        echo "${params[*]}"
+    )"
+
+    local url="https://api.twist.com/api/v3/${path#\/}${query}"
+
+    local token
+    token="$(get_access_token)"
+
+    curl -s -H "Authorization: Bearer $token" "$url"
+}
+
+# Get or prompt & retrieve an API token.
+function get_or_request_api_token() {
+    local token
+    token="$(
+        security find-generic-password -s "$SECURITY_SERVICE" -a "$USER" -w 2>/dev/null
+    )"
+
+    if [[ -z "$token" ]]; then
+        echo "Retrieving API token..." >&2
+
+        local account_email
+        read -rs -p "Twist Email Address: " account_email
+        echo >&2
+
+        local account_pw
+        read -rs -s -p "Twist Password: " account_pw
+        echo >&2
+
+        echo 'Requesting token...' >&2
+        token="$(
+            curl -s -X POST https://api.twist.com/api/v3/users/login \
+                -F "email=$account_email" \
+                -F "password=$account_pw" |
+                jq -r '.token'
+        )"
+        [[ "$token" == 'null' ]] && echo 'Error: Invalid credentials.' >&2 && exit 1
+
+        echo 'Storing token...' >&2
+        security add-generic-password -s "$SECURITY_SERVICE" -a "$USER" -w "$token" -U
+    fi
+
+    [[ -z "$token" ]] && echo 'Error: Missing API token.' >&2 && exit 1
+
+    echo "$token"
+}
+
+# Main script
+function main() {
+    local start_date="${1:-}"
+    local end_date="${2:-}"
+
+    [[ -z "$start_date" ]] && start_date=$(get_prev_month_date)
+    [[ -z "$end_date" ]] && end_date=$(date -j -v+1m -f "%Y-%m-%d" "$start_date" +%Y-%m-%d)
+
+    # Pre-load auth & account details
+    get_access_token >/dev/null
+    local account_id
+    account_id="$(get_account_id)"
+
+    echo "Querying $start_date - $end_date..."
+
+    # Get workspace ID
+    local workspace_id
+    workspace_id="$(api '/workspaces/get_default' | jq -r '.id')"
+
+    # Get thread ID
+    local thread_id
+    thread_id="$(
+        api '/threads/get' "workspace_id=$workspace_id" "is_saved=true" |
+            jq -r ".[] | select(.title==\"$THREAD_TITLE\") | .id"
+    )"
+
+    # Get, format, and print comments
+    api '/comments/get' \
+        "thread_id=$thread_id" \
+        "newer_than_ts=$(fmt_timestamp "$start_date")" \
+        "older_than_ts=$(fmt_timestamp "$end_date")" \
+        "limit=500" |
+        jq -r '
+            .[] |
+            select(.creator == '"$account_id"') |
+            "\n" + .content
+        ' |
+        sed 's/^- //'
+}
+
+main "$@"

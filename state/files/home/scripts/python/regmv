@@ -1,0 +1,380 @@
+#!/usr/bin/env python3
+"""Rename files via regex pattern."""
+
+import argparse
+import os
+import re
+import shutil
+from typing import Optional, Set
+
+from termcolor import colored
+import clui
+
+def path_strip_root_path(path, root):
+    """Strip root path from file path."""
+    root_len = len(root) + 1 # +1 to also strip the '/' character.
+    return path[root_len:]
+
+def get_file_renames(
+        abs_root_dir,
+        regex_pattern,
+        regex_replace,
+        match_files=True,
+        match_dirs=False,
+        match_path=False,
+        str_mods=None,
+    ):
+    """Process file renames and return tasks."""
+    file_renames = []
+    for root, dirs, files in os.walk(abs_root_dir, topdown=False):
+        walk_items = []
+
+        if match_files:
+            walk_items.extend([(file_name, root) for file_name in files])
+        if match_dirs:
+            walk_items.extend([(dir_name, root) for dir_name in dirs])
+
+        for basename, item_root in walk_items:
+            full_path = item_root+'/'+basename
+            string = path_strip_root_path(full_path, abs_root_dir) if match_path else basename
+            match = re.search(regex_pattern, string)
+            if match:
+                string_new = re.sub(
+                    regex_pattern,
+                    lambda matchobj: process_file_rename_match(
+                        matchobj,
+                        regex_replace=regex_replace,
+                        str_mods=str_mods,
+                    ),
+                    string,
+                )
+                full_path_new = '{base}/{new_path}'.format(
+                    base=(abs_root_dir if match_path else item_root),
+                    new_path=string_new,
+                )
+                if full_path != full_path_new:
+                    file_renames.append((full_path, full_path_new))
+
+    return file_renames
+
+def process_file_rename_match(matchobj, regex_replace, str_mods=None):
+    """Process a file rename match."""
+    result = matchobj.expand(regex_replace)
+    if str_mods:
+        for str_mod in str_mods:
+            str_func = getattr(result, str_mod)
+            result = str_func()
+    return result
+
+def generate_unique_filename(
+        filename: str,
+        other_existing_lower_filenames: Optional[Set[str]] = None,
+    ) -> str:
+    """Ensure a filename is unique."""
+    other_existing_lower_filenames = other_existing_lower_filenames or set()
+    [root, extension] = os.path.splitext(filename)
+    uid = 0
+    new_filename = filename
+    while filename_is_taken(new_filename, other_existing_lower_filenames):
+        new_root = '{} {}'.format(root, uid)
+        new_filename = new_root + extension
+        uid += 1
+
+    return new_filename
+
+def filename_is_taken(filename: str, other_existing_lower_filenames: Set[str]) -> bool:
+    """Check if a filename is taken."""
+    return os.path.exists(filename) or filename.lower() in other_existing_lower_filenames
+
+def case_sensitive_filename_is_taken(filename: str) -> bool:
+    """Check if a filename is taken (case-sensitive)."""
+    return (
+        os.path.exists(filename) and
+        os.path.basename(filename) in os.listdir(os.path.dirname(filename))
+    )
+
+def file_rename_message(from_name: str, to_name: Optional[str]) -> str:
+    """Prepare a message displaying a file rename."""
+    return ' '.join([
+        colored('-', attrs=['dark']),
+        colored(from_name, 'cyan'),
+        colored('>', attrs=['dark']),
+        colored(to_name, 'cyan') if to_name is not None else colored('-', 'red'),
+    ])
+
+def resolve_file_rename_conflict(
+        file_src: str,
+        file_dst: str,
+        abs_root_dir: str,
+        validated_lower_file_dsts: Set,
+        resolve_ys: Optional[bool] = None,
+    ) -> Optional[str]:
+    """Resolve a file rename conflict"""
+    while file_dst is not None and filename_is_taken(file_dst, validated_lower_file_dsts):
+        file_src_leaf = path_strip_root_path(file_src, abs_root_dir)
+        file_dst_leaf = path_strip_root_path(file_dst, abs_root_dir)
+        clui.throw_warning('The following file already exists or is taken by another file:')
+        print(file_rename_message(file_src_leaf, file_dst_leaf))
+
+        conflict_choice_autoresolve = 'a'
+        conflict_choice_resolve = 'r'
+        conflict_choice_overwrite = 'o'
+        conflict_choice_skip = 's'
+        conflict_choice_cancel = 'c'
+        conflict_choice = clui.get_decision(
+            question='Do you want to auto-resolve [{a}], resolve [{r}], overwrite [{o}], or '
+            'skip [{s}] it, or cancel [{c}]?'.format(
+                a=conflict_choice_autoresolve,
+                r=conflict_choice_resolve,
+                o=conflict_choice_overwrite,
+                s=conflict_choice_skip,
+                c=conflict_choice_cancel,
+            ),
+            options=[
+                conflict_choice_autoresolve,
+                conflict_choice_resolve,
+                conflict_choice_overwrite,
+                conflict_choice_skip,
+                conflict_choice_cancel,
+            ],
+            default=conflict_choice_autoresolve,
+            aliases={
+                'auto': conflict_choice_autoresolve,
+                'autoresolve': conflict_choice_autoresolve,
+                'resolve': conflict_choice_resolve,
+                'overwrite': conflict_choice_overwrite,
+                'skip': conflict_choice_skip,
+                'cancel': conflict_choice_cancel,
+            },
+            resolve=(
+                conflict_choice_autoresolve if resolve_ys == True
+                else (
+                    conflict_choice_skip if resolve_ys == False
+                    else None
+                )
+            ),
+        )
+
+        if conflict_choice == conflict_choice_autoresolve:
+            conflict_is_enclosed = (
+                file_src.lower() == file_dst.lower() and
+                not case_sensitive_filename_is_taken(file_dst)
+            )
+            return (
+                file_dst if conflict_is_enclosed
+                else generate_unique_filename(file_dst, validated_lower_file_dsts)
+            )
+        if conflict_choice == conflict_choice_resolve:
+            return os.path.join(abs_root_dir, input('Resolve to: '))
+        if conflict_choice == conflict_choice_overwrite:
+            return file_dst
+        if conflict_choice == conflict_choice_skip:
+            return None
+        if conflict_choice == conflict_choice_cancel:
+            clui.throw_warning('Aborting.')
+            exit()
+        clui.throw_error('Invalid choice.', close=True)
+
+def validate_file_renames(abs_root_dir, file_renames, resolve_ys=None):
+    """Validate file renames."""
+    validated_file_renames = []
+    validated_lower_file_dsts = set()
+    resolved_file_rename_conflicts = []
+    for file_src, file_dst in file_renames:
+        if filename_is_taken(file_dst, validated_lower_file_dsts):
+            file_dst = resolve_file_rename_conflict(
+                file_src,
+                file_dst,
+                abs_root_dir,
+                validated_lower_file_dsts,
+                resolve_ys,
+            )
+            resolved_file_rename_conflicts.append((file_src, file_dst))
+        if file_dst is not None:
+            validated_file_renames.append((file_src, file_dst))
+            validated_lower_file_dsts.add(file_dst.lower())
+
+    if resolved_file_rename_conflicts:
+        updated_file_rename_conflicts = [
+            (file_src, file_dst)
+            for file_src, file_dst in resolved_file_rename_conflicts
+            if file_dst is not None
+        ]
+        if updated_file_rename_conflicts:
+            print('The following file conflicts will be resolved:')
+            for file_src, file_dst in updated_file_rename_conflicts:
+                print(file_rename_message(file_src, file_dst))
+        skipped_file_rename_conflicts = [
+            (file_src, None)
+            for file_src, file_dst in resolved_file_rename_conflicts
+            if file_dst is None
+        ]
+        if skipped_file_rename_conflicts:
+            print('The following file conflicts will be skipped:')
+            for file_src, file_dst in skipped_file_rename_conflicts:
+                print(file_rename_message(file_src, file_dst))
+        if not clui.yn_decision(resolve=resolve_ys):
+            clui.throw_warning('Aborting.')
+            exit()
+
+    return validated_file_renames
+
+def __main__():
+    """Main logic."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'dir',
+        help='The directory in which items should be moved.',
+        metavar='DIR',
+    )
+    parser.add_argument(
+        'regex_pattern',
+        help='The Regex pattern used to find items, e.g. "^fo{2}$".',
+        metavar='REG_FIND',
+    )
+    parser.add_argument(
+        'regex_replace',
+        help=(
+            'The string or pattern used to replace all regex matches. Group matches (such as '
+            '"\\1") may be used.'
+        ),
+        metavar='REPLACE',
+    )
+    parser.add_argument(
+        '-c',
+        '--copy',
+        help='Copy instead of moving files.',
+        action='store_true',
+    )
+    parser.add_argument(
+        '-t',
+        '--type',
+        help=(
+            'Search & replace files, directories or both. "-t f" will affect files, "-t d" '
+            'directories and "-t a" all.'
+        ),
+        metavar='TYPE',
+        default='f',
+        choices=['f', 'd', 'a'],
+    )
+    parser.add_argument(
+        '-p',
+        '--match-path',
+        help=(
+            'Search & replace the item path instead of just the basename ("foo/bar.txt" instead '
+            'of "bar.txt"). This flag can be used to move items into a different directory.'
+        ),
+        action='store_true',
+    )
+    parser.add_argument(
+        '-l',
+        '--list-count',
+        help=(
+            'List INT number of items to be moved. Specifying "-l -1" will list all affected '
+            'items.'
+        ),
+        type=int,
+        default=10,
+        metavar='INT',
+    )
+    parser.add_argument(
+        '-m',
+        '--modify',
+        help=(
+            'Perform additional modifications on result strings, such as "upper", "lower" or '
+            '"strip". All string methods provided by python that require no arguments are allowed. '
+            'Multiple modify flags can be specified.'
+        ),
+        type=str,
+        action='append',
+    )
+    parser.add_argument(
+        '-y',
+        '--yes',
+        help=(
+            'Automatically accept y/n prompts.'
+        ),
+        action='store_true',
+    )
+    args = parser.parse_args()
+
+    # Validate specified directory.
+    if not os.path.isdir(args.dir):
+        clui.throw_error('Invalid directory: "%s"' % args.dir, close=True)
+
+    # Get absolute root dir.
+    abs_root_dir = os.path.abspath(args.dir)
+    # Get regex pattern.
+    regex_pattern = r'%s' % args.regex_pattern
+    # Get replacement pattern/string.
+    regex_replace = args.regex_replace
+
+    # Parse -l argument.
+    prompt_list_count = args.list_count
+
+    print('Gathering files...')
+
+    resolve_ys = True if args.yes else None
+
+    file_renames = get_file_renames(
+        abs_root_dir,
+        regex_pattern,
+        regex_replace,
+        match_files=(args.type in ['f', 'a']),
+        match_dirs=(args.type in ['d', 'a']),
+        match_path=args.match_path,
+        str_mods=args.modify
+    )
+
+    if not file_renames:
+        clui.throw_warning('No items found.')
+        exit()
+
+    file_action_past_str = 'copied' if args.copy else 'moved'
+
+    file_renames_len = len(file_renames)
+    if prompt_list_count == 0:
+        print('%d files will be %s.' % (file_renames_len, file_action_past_str))
+    else:
+        if prompt_list_count < 0:
+            prompt_list_count = file_renames_len
+        print('The following %d files will be %s:' % (file_renames_len, file_action_past_str))
+        for _ in range(0, min(prompt_list_count, file_renames_len)):
+            file_src, file_dst = file_renames[_]
+            file_src = path_strip_root_path(file_src, abs_root_dir)
+            file_dst = path_strip_root_path(file_dst, abs_root_dir)
+            print(file_rename_message(file_src, file_dst))
+        if prompt_list_count < file_renames_len:
+            print(colored('and %d more.' % (file_renames_len-prompt_list_count), attrs=['dark']))
+
+    # Request confirmation before renaming.
+    if not clui.yn_decision(resolve=resolve_ys):
+        clui.throw_warning('Aborting.')
+        exit()
+
+    # Validate name updates.
+    file_renames = validate_file_renames(abs_root_dir, file_renames, resolve_ys=resolve_ys)
+
+    # Rename (or copy) all files.
+    progress = 0
+    progrses_total = len(file_renames)
+    for file_src, file_dst in file_renames:
+        clui.print_progress_bar(progress, progrses_total, message='Moving files...')
+        dir_dst = os.path.dirname(file_dst)
+        # Create path if path does not exist yet.
+        if not os.path.exists(dir_dst):
+            os.makedirs(dir_dst)
+        # Copy/move file.
+        if args.copy:
+            shutil.copy2(file_src, file_dst)
+        else:
+            os.rename(file_src, file_dst)
+        progress = progress + 1
+    clui.print_temp_clear()
+
+    print('Done.')
+
+
+# Main fn.
+if __name__ == "__main__":
+    __main__()
