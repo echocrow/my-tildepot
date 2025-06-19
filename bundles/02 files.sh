@@ -35,5 +35,5 @@ function bundle::parse::dot/fish() {
 function bundle::parse::preferences/iterm2.plist() {
   # Reset frequently changing variables in iTerm2 config.
   plutil -replace NoSyncLaunchExperienceControllerRunCount -integer 0 \
-    "$BUNDLE_DIR/preferences/iterm2.plist"
+    "$BUNDLE_STATE_DIR/preferences/iterm2.plist"
 }
