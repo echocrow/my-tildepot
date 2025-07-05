@@ -12,13 +12,13 @@ export FILES="
   zprofile              ~/.zprofile
 
   [home]
-  scripts               ~/Scripts/
+  scripts               ~/Scripts
 
   [lib]
   colorsync-displays    ~/Library/ColorSync/Profiles/Displays
 
   [app-support]
-  mouser                ~/Library/Application\ Support/mouser
+  mouser                ~/Library/Application Support/mouser
 
   [preferences]         @plutil
   launchservices.plist  ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist
