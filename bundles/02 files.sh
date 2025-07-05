@@ -5,6 +5,7 @@ export EXTEND='files-bundle@1.0.0-next.5'
 export FILES="
   [dot]
   fish                  ~/.config/fish
+    !functions/_*
   husky                 ~/.config/husky
   gitconfig             ~/.gitconfig
   gitignore             ~/.gitignore
