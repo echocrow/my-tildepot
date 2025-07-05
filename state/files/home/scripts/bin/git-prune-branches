@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+#
+# Prune merged & untracked branches
+
+# Enable strict mode
+set -euo pipefail
+
+##
+# Text modifiers
+##
+
+# TTY Text Formatters
+# Source: https://github.com/Homebrew/install/blob/master/install.sh
+function txt::_escape() { printf "\033[%sm" "$1"; }
+[[ ! -t 1 ]] && function txt::_escape() { :; }
+
+function txt::_bold() { txt::_escape "1;$1"; }
+
+# txt_underline="$(txt::_escape "4;39")"
+txt_blue="$(txt::_escape 34)"
+txt_red="$(txt::_escape 31)"
+txt_green="$(txt::_escape 32)"
+txt_yellow="$(txt::_escape 33)"
+txt_bold="$(txt::_bold 39)"
+txt_reset="$(txt::_escape 0)"
+
+##
+# Lib
+##
+
+# Print optional error messages to stderr and exit
+function lib::abort() {
+  case $# in
+  0) echo "${txt_red}Error.${txt_reset}" >&2 ;;
+  1) echo "${txt_red}Error:${txt_reset}" "$(lib::_fmt_msg "$1")" >&2 ;;
+  *)
+    echo "${txt_red}Error:${txt_reset}" >&2
+    for msg in "$@"; do
+      echo "  $(lib::_fmt_msg "$msg")" >&2
+    done
+    ;;
+  esac
+  exit 1
+}
+
+# Print optional warning messages to stderr
+function lib::warn() {
+  case $# in
+  0) echo "${txt_yellow}Warning.${txt_reset}" >&2 ;;
+  1) echo "${txt_yellow}Warning:${txt_reset}" "$(lib::_fmt_msg "$1")" >&2 ;;
+  *)
+    echo "${txt_yellow}Warning:${txt_reset}" >&2
+    for msg in "$@"; do
+      echo "  $(lib::_fmt_msg "$msg")" >&2
+    done
+    ;;
+  esac
+}
+# Print optional success messages
+function lib::success() {
+  case $# in
+  0) echo "${txt_green}Success.${txt_reset}" >&2 ;;
+  1) echo "${txt_green}Success:${txt_reset}" "$(lib::_fmt_msg "$1")" >&2 ;;
+  *)
+    echo "${txt_green}Success:${txt_reset}" >&2
+    for msg in "$@"; do
+      echo "  $(lib::_fmt_msg "$msg")" >&2
+    done
+    ;;
+  esac
+}
+
+# Print an app-level message to stdout
+function lib::ohai() {
+  local msg="$1"
+  printf "${txt_bold}${txt_blue}=>${txt_bold} %s${txt_reset}\n" "$(lib::_fmt_msg "$msg")"
+}
+
+# Format a message for logs, injecting highlights
+function lib::_fmt_msg() {
+  local line="$1"
+
+  # Highlight brackets.
+  local tmp_ansi="##ANSI_CTRL##"
+  # Temporarily replace ANSI control sequences.
+  line="${line//$'\033['/$tmp_ansi}"
+  # Replace regular brackets.
+  line="${line//\[/$txt_blue}"
+  line="${line//\]/$txt_reset}"
+  # Restore escape sequences.
+  line="${line//$tmp_ansi/$'\033['}"
+
+  echo -n "$line"
+}
+
+##
+# Main
+##
+
+GIT_MAIN_BRANCH=main
+
+function main() {
+  lib::ohai "Updating $GIT_MAIN_BRANCH"
+  git checkout "$GIT_MAIN_BRANCH"
+  git fetch --prune --all
+  git pull
+
+  local main_sha
+  main_sha="$(git rev-parse $GIT_MAIN_BRANCH)"
+  local stale_branches=()
+
+  for branch in $(git branch | cut -c 3-); do
+    [[ "$branch" == "$GIT_MAIN_BRANCH" ]] && continue
+
+    echo ''
+    lib::ohai "Processing branch: $branch"
+
+    git checkout "$branch"
+
+    echo "Attempting to rebase from $GIT_MAIN_BRANCH..."
+    if ! git --no-advice rebase "$GIT_MAIN_BRANCH" 2>/dev/null; then
+      git rebase --abort
+      lib::warn "Rebase failed; skipping..."
+      continue
+    fi
+
+    echo "Successfully rebased."
+
+    local branch_sha
+    branch_sha="$(git rev-parse "$branch")"
+    if [[ "$branch_sha" != "$main_sha" ]]; then
+      lib::warn "Branch has unmerged commits; skipping."
+      continue
+    fi
+
+    if git rev-parse --abbrev-ref '@{upstream}' >/dev/null; then
+      lib::warn "Branch has upstream; skipping."
+      continue
+    fi
+
+    echo "Marking branch as stale..."
+    stale_branches+=("$branch")
+  done
+  echo ''
+
+  git checkout "$GIT_MAIN_BRANCH"
+  echo ''
+
+  if [[ ${#stale_branches[@]} -eq 0 ]]; then
+    lib::success "No stale branches found."
+  else
+    lib::ohai "Deleting stale branches..."
+    for branch in "${stale_branches[@]}"; do
+      git branch -D "$branch"
+    done
+    echo ''
+    lib::success "Deleted [${#stale_branches[@]}] stale branches."
+  fi
+}
+
+main "$@"

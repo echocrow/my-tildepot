@@ -4,12 +4,5 @@
 
 target=${1-main}
 
-git diff "$target" | grep -i todo -B 4 -A 4
-git_stat="${PIPESTATUS[0]}" grep_stat="${PIPESTATUS[1]}"
-
-[[ $git_stat -ne 0 ]] && exit "$git_stat"
-
-[[ $grep_stat -eq 0 ]] && exit 1
-[[ $grep_stat -gt 1 ]] && exit "$grep_stat"
-
-exit 0
+# git diff --color=always "$target" | grep -i todo --context=4
+git diff --color=always -G 'todo' -i --exit-code "$target"

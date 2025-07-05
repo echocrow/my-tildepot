@@ -196,13 +196,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>0 547 224 278 0 0 3840 1575 </string>
+	<string>-1920 868 224 278 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>-1175 1165 430 195 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1720 1080 400 135 0 0 3840 1575 </string>
+	<string>-1160 1210 400 135 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1610 882 620 398 0 0 3840 1575 </string>
+	<string>-1270 1012 620 398 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>-1920 520 1920 1055 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1469,6 +1469,7 @@
 		<string>3.5.12</string>
 		<string>3.5.13</string>
 		<string>3.5.10</string>
+		<string>3.5.14</string>
 		<string>3.5.11</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
@@ -2609,11 +2610,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2025-05-08T10:51:21Z</date>
+	<date>2025-07-05T09:33:47Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>3885353529</integer>
+	<integer>4016773250</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2645,7 +2646,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.5.13</string>
+	<string>3.5.14</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

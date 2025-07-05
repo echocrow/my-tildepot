@@ -1,0 +1,162 @@
+#!/usr/bin/env bash
+#
+# Prepare a new branch & pull request
+
+# Enable strict mode
+set -euo pipefail
+
+##
+# Text modifiers
+##
+
+# TTY Text Formatters
+# Source: https://github.com/Homebrew/install/blob/master/install.sh
+function txt::_escape() { printf "\033[%sm" "$1"; }
+[[ ! -t 1 ]] && function txt::_escape() { :; }
+
+function txt::_mkbold() { txt::_escape "1;$1"; }
+
+txt_blue="$(txt::_escape 34)"
+txt_red="$(txt::_escape 31)"
+txt_yellow="$(txt::_escape 33)"
+txt_bold="$(txt::_mkbold 39)"
+txt_reset="$(txt::_escape 0)"
+
+##
+# Lib
+##
+
+# Print optional error messages to stderr and exit
+function lib::abort() {
+  case $# in
+  0) echo "${txt_red}Error.${txt_reset}" >&2 ;;
+  1) echo "${txt_red}Error:${txt_reset}" "$(lib::_fmt_msg "$1")" >&2 ;;
+  *)
+    echo "${txt_red}Error:${txt_reset}" >&2
+    for msg in "$@"; do
+      echo "  $(lib::_fmt_msg "$msg")" >&2
+    done
+    ;;
+  esac
+  exit 1
+}
+
+# Print optional warning messages to stderr
+function lib::warn() {
+  case $# in
+  0) echo "${txt_yellow}Warning.${txt_reset}" >&2 ;;
+  1) echo "${txt_yellow}Warning:${txt_reset}" "$(lib::_fmt_msg "$1")" >&2 ;;
+  *)
+    echo "${txt_yellow}Warning:${txt_reset}" >&2
+    for msg in "$@"; do
+      echo "  $(lib::_fmt_msg "$msg")" >&2
+    done
+    ;;
+  esac
+}
+
+# Print an app-level message to stdout
+# Source: https://github.com/Homebrew/install/blob/master/install.sh
+function lib::ohai() {
+  local msg="$1"
+  printf "${txt_bold}${txt_blue}=>${txt_bold} %s${txt_reset}\n" "$(lib::_fmt_msg "$msg")"
+}
+
+# Format a message for logs, simplifying paths and injecting highlights
+function lib::_fmt_msg() {
+  local line="$1"
+
+  # Simplify repository paths.
+  [ -n "${APP_REPO_ROOT+x}" ] && line="${line//$APP_REPO_ROOT\//}"
+
+  # Highlight brackets.
+  line="${line// \[/ $txt_blue}"
+  line="${line//\]/$txt_reset}"
+
+  echo -n "$line"
+}
+
+# Print pre-prompt messages
+function lib::_pre_prompt() {
+  while [[ $# -gt 1 ]]; do
+    echo "${txt_bold}${txt_blue}!)${txt_reset} $(lib::_fmt_msg "$1")"
+    shift
+  done
+}
+
+# Prompt for an answer
+function lib::prompt() {
+  lib::_pre_prompt "$@"
+  local msg="${!#}"
+  msg="$(lib::_fmt_msg "$msg")"
+
+  local res
+  read -r -p "${txt_bold}${txt_blue}?)${txt_reset} $msg " res
+  echo "$res"
+}
+
+# Prompt for a yes/no confirmation
+function lib::_confirm() {
+  local default=
+  case ${1-} in
+  -y | --yes) default=y && shift ;;
+  -n | --no) default=n && shift ;;
+  esac
+
+  lib::_pre_prompt "$@"
+  local msg="${!#}"
+  msg="$(lib::_fmt_msg "$msg")"
+
+  local opts='[y/n]'
+  [[ "$default" == 'y' ]] && opts='[Y/n]'
+  [[ "$default" == 'n' ]] && opts='[y/N]'
+
+  local yn
+  while true; do
+    yn="$(lib::prompt "$msg $opts")"
+    [[ -z "$yn" ]] && yn="$default"
+    case "$yn" in
+    [Yy]*) return 0 ;;
+    [Nn]*) return 1 ;;
+    *) ;;
+    esac
+  done
+}
+
+function lib::git_current_branch() {
+  git rev-parse --abbrev-ref HEAD
+}
+
+##
+# Main
+##
+
+GIT_MAIN_BRANCH=main
+
+function main() {
+  if [[ $(lib::git_current_branch) != "$GIT_MAIN_BRANCH" ]]; then
+    if lib::_confirm '-y' "Switch to $GIT_MAIN_BRANCH?"; then
+      lib::ohai "Switching to $GIT_MAIN_BRANCH..."
+    fi
+  fi
+
+  git fetch origin
+  git status
+  git pull
+
+  local base_branch
+  base_branch="$(lib::git_current_branch)"
+
+  local branch_name
+  branch_name="$(lib::prompt "What is the name of the new branch?")"
+
+  lib::ohai "Branching [$base_branch] -> [$branch_name]..."
+  git checkout -b "$branch_name"
+
+  # local pr_name
+  # pr_name="$(lib::prompt "What is the name of the Pull Request?")"
+
+  # gh pr create --draft --title "$pr_name"
+}
+
+main "$@"

@@ -5,6 +5,28 @@
 	<key>LSHandlers</key>
 	<array>
 		<dict>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.readdle.sparkdesktop</string>
+			<key>LSHandlerURLScheme</key>
+			<string>readdle-spark</string>
+		</dict>
+		<dict>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.readdle.sparkdesktop</string>
+			<key>LSHandlerURLScheme</key>
+			<string>readdlespark</string>
+		</dict>
+		<dict>
 			<key>LSHandlerContentType</key>
 			<string>public.shell-script</string>
 			<key>LSHandlerPreferredVersions</key>
@@ -233,11 +255,11 @@
 			<string>public.unix-executable</string>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
-				<key>LSHandlerRoleShell</key>
+				<key>LSHandlerRoleAll</key>
 				<string>-</string>
 			</dict>
-			<key>LSHandlerRoleShell</key>
-			<string>com.googlecode.iterm2</string>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
 		</dict>
 		<dict>
 			<key>LSHandlerPreferredVersions</key>
@@ -429,28 +451,6 @@
 			<string>com.readdle.sparkdesktop</string>
 			<key>LSHandlerURLScheme</key>
 			<string>oauth.redirect.com.readdle.smartmail</string>
-		</dict>
-		<dict>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.readdle.sparkdesktop</string>
-			<key>LSHandlerURLScheme</key>
-			<string>readdle-spark</string>
-		</dict>
-		<dict>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.readdle.sparkdesktop</string>
-			<key>LSHandlerURLScheme</key>
-			<string>readdlespark</string>
 		</dict>
 	</array>
 </dict>
