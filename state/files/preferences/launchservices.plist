@@ -13,6 +13,17 @@
 			<key>LSHandlerRoleAll</key>
 			<string>com.readdle.sparkdesktop</string>
 			<key>LSHandlerURLScheme</key>
+			<string>hotmail.com.readdle.smartmail.desktop</string>
+		</dict>
+		<dict>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.readdle.sparkdesktop</string>
+			<key>LSHandlerURLScheme</key>
 			<string>msauth.com.readdle.smartmail.desktop</string>
 		</dict>
 		<dict>
@@ -440,17 +451,6 @@
 			<string>com.readdle.sparkdesktop</string>
 			<key>LSHandlerURLScheme</key>
 			<string>com.googleusercontent.apps.681834923750-3p9205dgnfbq0s196910u38tmn61ehc2</string>
-		</dict>
-		<dict>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.readdle.sparkdesktop</string>
-			<key>LSHandlerURLScheme</key>
-			<string>hotmail.com.readdle.smartmail.desktop</string>
 		</dict>
 	</array>
 </dict>
