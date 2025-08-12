@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export EXTEND='files-bundle@1.0.0-next.5'
+export EXTEND='files-bundle@1.0.0-next.6'
 
 export FILES="
   [dot]
