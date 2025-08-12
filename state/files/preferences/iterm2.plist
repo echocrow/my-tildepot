@@ -204,7 +204,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1270 1012 620 398 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 520 1920 1055 -1920 520 1920 1055 </string>
+	<string>-1920 253 1920 1055 -1920 253 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1920 253 1920 1055 -1920 253 1920 1055 </string>
 	<key>New Bookmarks</key>
@@ -1495,7 +1495,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>066085C7-9760-45AE-9B38-E639233A055B</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 15.4.1 (Build 24E263)</string>
+	<string>Version 15.6 (Build 24G84)</string>
 	<key>NoSyncLastSystemPythonVersionRequirement</key>
 	<string>1.17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
@@ -2610,7 +2610,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2025-07-05T09:33:47Z</date>
+	<date>2025-08-11T22:12:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
