@@ -1495,7 +1495,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>066085C7-9760-45AE-9B38-E639233A055B</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 15.6 (Build 24G84)</string>
+	<string>Version 15.6.1 (Build 24G90)</string>
 	<key>NoSyncLastSystemPythonVersionRequirement</key>
 	<string>1.17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
@@ -2610,7 +2610,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2025-08-11T22:12:02Z</date>
+	<date>2025-09-07T10:13:13Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -2620,7 +2620,7 @@
 	<key>Secure Input</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>SoundForEsc</key>

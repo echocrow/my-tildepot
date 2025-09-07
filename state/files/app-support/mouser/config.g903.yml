@@ -1,11 +1,10 @@
 mappings:
   GOTO_LEFT: f13
   GOTO_RIGHT: f15
-  VOL_UP: f11
-  VOL_DOWN: f12
+  VOL_DOWN: f11
+  VOL_UP: f12
   UI: mouse4
   MEDIA: mouse5
-  NOOP: f18
   CLOSE: f19
 
 gestures:
