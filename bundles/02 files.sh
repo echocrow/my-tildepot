@@ -43,6 +43,11 @@ function bundle::parse::preferences/iterm2.plist() {
 function RESTORE() {
   SUPER
 
+  if ! tilde::cmd_exists tildepot; then
+    ln -s "$HOME/Projects/tildepot/dist/tildepot" "$HOME/Scripts/bin/tildepot"
+    tilde::success 'Restored temporary [tildepot] link'
+  fi
+
   printf "\n"
   printf "\033[1;39mTo restore the prompt, either restart this terminal, or run:\033[0m\n"
   printf "$ \033[34mtide reload\033[0m\n"
