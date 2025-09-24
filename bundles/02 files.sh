@@ -30,7 +30,7 @@ export FILES="
 function bundle::parse::dot/fish() {
   # Remove private (frequently changing) variables from fish config.
   # See https://github.com/IlanCosman/tide/issues/242
-  sed -i '' '/^SETUVAR _/d' "$1/fish_variables"
+  sed -i '' '/^SETUVAR _tide_prompt_/d' "$1/fish_variables"
 }
 
 function bundle::parse::preferences/iterm2.plist() {
