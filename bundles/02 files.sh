@@ -38,3 +38,12 @@ function bundle::parse::preferences/iterm2.plist() {
   plutil -replace NoSyncLaunchExperienceControllerRunCount -integer 0 \
     "$BUNDLE_STATE_DIR/preferences/iterm2.plist"
 }
+
+
+function RESTORE() {
+  SUPER
+
+  printf "\n"
+  printf "\033[1;39mTo restore the prompt, either restart this terminal, or run:\033[0m\n"
+  printf "$ \033[34mtide reload\033[0m\n"
+}
