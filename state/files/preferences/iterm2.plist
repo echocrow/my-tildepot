@@ -204,7 +204,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1270 1012 620 398 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 253 1920 1055 -1920 253 1920 1055 </string>
+	<string>0 0 1728 1079 0 0 1728 1079 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1920 253 1920 1055 -1920 253 1920 1055 </string>
 	<key>New Bookmarks</key>
@@ -1471,6 +1471,7 @@
 		<string>3.5.10</string>
 		<string>3.5.14</string>
 		<string>3.5.11</string>
+		<string>3.6.1</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1505,7 +1506,9 @@
 	<key>NoSyncMontereySecureKeyboardEntryWarning_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>757557264.88419402</real>
+	<real>780532773.878878</real>
+	<key>NoSyncOnboardingWindowHasBeenShown34</key>
+	<true/>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncRecordedVariables</key>
@@ -2610,7 +2613,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2025-09-07T10:13:13Z</date>
+	<date>2025-09-24T22:39:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -2646,7 +2649,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.5.14</string>
+	<string>3.6.1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
