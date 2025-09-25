@@ -33,6 +33,15 @@ function bundle::parse::dot/fish() {
   sed -i '' '/^SETUVAR _tide_prompt_/d' "$1/fish_variables"
 }
 
+function bundle::parse::home/scripts() {
+  # Remove temporary tildepot link.
+  rm -f "$1/bin/tildepot"
+}
+function bundle::serialize::home/scripts() {
+  ln -s "$HOME/Projects/tildepot/dist/tildepot" "$1/bin/tildepot"
+  tilde::success 'Restored temporary [tildepot] link'
+}
+
 function bundle::parse::preferences/iterm2.plist() {
   # Reset frequently changing variables in iTerm2 config.
   plutil -replace NoSyncLaunchExperienceControllerRunCount -integer 0 \
@@ -42,11 +51,6 @@ function bundle::parse::preferences/iterm2.plist() {
 
 function RESTORE() {
   SUPER
-
-  if ! tilde::cmd_exists tildepot; then
-    ln -s "$HOME/Projects/tildepot/dist/tildepot" "$HOME/Scripts/bin/tildepot"
-    tilde::success 'Restored temporary [tildepot] link'
-  fi
 
   printf "\n"
   printf "\033[1;39mTo restore the prompt, either restart this terminal, or run:\033[0m\n"
