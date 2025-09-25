@@ -1,1 +1,0 @@
-* * * * * ~/Scripts/bash/ping_hassio.sh
