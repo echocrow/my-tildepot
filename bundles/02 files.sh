@@ -53,6 +53,7 @@ function RESTORE() {
   SUPER
 
   printf "\n"
-  printf "\033[1;39mTo restore the prompt, either restart this terminal, or run:\033[0m\n"
-  printf "$ \033[34mtide reload\033[0m\n"
+  printf "\033[34m==>\033[0m \033[1;39mCaveats\033[0m\n"
+  printf "To restore the prompt, either restart this terminal, or run:\n"
+  printf "  \033[34mtide reload\033[0m\n"
 }
