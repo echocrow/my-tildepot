@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export EXTEND='files-bundle@1.0.0-next.7'
+export EXTEND='files-bundle@1.0.0-next.8'
 
 export FILES="
   [dot]
@@ -27,22 +27,22 @@ export FILES="
   xgestures.plist       ~/Library/Preferences/what.xGestures.plist
 "
 
-function bundle::parse::dot/fish() {
+function bundle::save::dot/fish() {
   # Remove private (frequently changing) variables from fish config.
   # See https://github.com/IlanCosman/tide/issues/242
   sed -i '' '/^SETUVAR _tide_prompt_/d' "$1/fish_variables"
 }
 
-function bundle::parse::home/scripts() {
+function bundle::save::home/scripts() {
   # Remove temporary tildepot link.
   rm -f "$1/bin/tildepot"
 }
-function bundle::serialize::home/scripts() {
+function bundle::restore::home/scripts() {
   ln -s "$HOME/Projects/tildepot/dist/tildepot" "$1/bin/tildepot"
   tilde::success 'Restored temporary [tildepot] link'
 }
 
-function bundle::parse::preferences/iterm2.plist() {
+function bundle::save::preferences/iterm2.plist() {
   # Reset frequently changing variables in iTerm2 config.
   plutil -replace NoSyncLaunchExperienceControllerRunCount -integer 0 \
     "$BUNDLE_STATE_DIR/preferences/iterm2.plist"
