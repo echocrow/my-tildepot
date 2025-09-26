@@ -52,8 +52,8 @@ function bundle::parse::preferences/iterm2.plist() {
 function RESTORE() {
   SUPER
 
-  printf "\n"
-  printf "\033[34m==>\033[0m \033[1;39mCaveats\033[0m\n"
-  printf "To restore the prompt, either restart this terminal, or run:\n"
-  printf "  \033[34mtide reload\033[0m\n"
+  echo ''
+  tilde::info 'Caveats'
+  tilde::echo 'To restore the prompt, either restart this terminal, or run:'
+  tilde::echo "  [tide reload]"
 }
