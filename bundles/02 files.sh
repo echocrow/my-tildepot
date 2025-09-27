@@ -48,7 +48,6 @@ function bundle::save::preferences/iterm2.plist() {
     "$BUNDLE_STATE_DIR/preferences/iterm2.plist"
 }
 
-
 function RESTORE() {
   SUPER
 
