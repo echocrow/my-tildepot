@@ -6,7 +6,215 @@
 	<array>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780402705</integer>
+			<integer>806004915</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.readdle.sparkdesktop</string>
+			<key>LSHandlerURLScheme</key>
+			<string>readdlespark</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>xcode</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>x-swift-package-repository-authentication</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>x-xcode-documentation</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>apple-reference-documentation</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>xcdevice</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>xcdoc</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>x-xcode-ci-build-report-feedback</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>xcarchive</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>xcode-ci-handler</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>doc</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>xcode-ci</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>803743093</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.dt.xcode</string>
+			<key>LSHandlerURLScheme</key>
+			<string>x-source-tag</string>
+		</dict>
+		<dict>
+			<key>LSHandlerContentType</key>
+			<string>public.shell-script</string>
+			<key>LSHandlerModificationDate</key>
+			<integer>0</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>805822541</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.cron.electron</string>
+			<key>LSHandlerURLScheme</key>
+			<string>cron</string>
+		</dict>
+		<dict>
+			<key>LSHandlerContentType</key>
+			<string>public.yaml</string>
+			<key>LSHandlerModificationDate</key>
+			<integer>0</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>805890997</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -45,7 +253,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
+			<integer>795438768</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -58,7 +266,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
+			<integer>795438768</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -112,7 +320,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780488787</integer>
+			<integer>805899227</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -138,7 +346,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -166,7 +374,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780489599</integer>
+			<integer>805899724</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -179,7 +387,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
+			<integer>805048112</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -192,7 +400,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780488787</integer>
+			<integer>806003467</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -272,7 +480,7 @@
 			<key>LSHandlerContentType</key>
 			<string>com.fournova.tower3.theme</string>
 			<key>LSHandlerModificationDate</key>
-			<integer>780489611</integer>
+			<integer>796730752</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -296,7 +504,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780489611</integer>
+			<integer>806157653</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -335,7 +543,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -403,8 +611,47 @@
 			<string>lghubapp</string>
 		</dict>
 		<dict>
+			<key>LSHandlerContentType</key>
+			<string>net.daringfireball.markdown</string>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>789498832</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
+		</dict>
+		<dict>
+			<key>LSHandlerContentType</key>
+			<string>public.svg-image</string>
+			<key>LSHandlerModificationDate</key>
+			<integer>794324140</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
+		</dict>
+		<dict>
+			<key>LSHandlerContentType</key>
+			<string>com.apple.ical.backup-package</string>
+			<key>LSHandlerModificationDate</key>
+			<integer>786024357</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.apple.ical</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -417,7 +664,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -430,7 +677,33 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806014489</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.tinyspeck.slackmacgap</string>
+			<key>LSHandlerURLScheme</key>
+			<string>slack</string>
+		</dict>
+		<dict>
+			<key>LSHandlerContentType</key>
+			<string>public.python-script</string>
+			<key>LSHandlerModificationDate</key>
+			<integer>795000138</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -443,7 +716,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -456,7 +729,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -469,7 +742,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -482,7 +755,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -495,7 +768,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
+			<integer>806004915</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -505,58 +778,6 @@
 			<string>com.readdle.sparkdesktop</string>
 			<key>LSHandlerURLScheme</key>
 			<string>readdle-spark</string>
-		</dict>
-		<dict>
-			<key>LSHandlerModificationDate</key>
-			<integer>780401258</integer>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.readdle.sparkdesktop</string>
-			<key>LSHandlerURLScheme</key>
-			<string>readdlespark</string>
-		</dict>
-		<dict>
-			<key>LSHandlerContentType</key>
-			<string>public.shell-script</string>
-			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.sublimetext.4</string>
-		</dict>
-		<dict>
-			<key>LSHandlerModificationDate</key>
-			<integer>780488656</integer>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.cron.electron</string>
-			<key>LSHandlerURLScheme</key>
-			<string>cron</string>
-		</dict>
-		<dict>
-			<key>LSHandlerContentType</key>
-			<string>public.yaml</string>
-			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.sublimetext.4</string>
 		</dict>
 	</array>
 </dict>

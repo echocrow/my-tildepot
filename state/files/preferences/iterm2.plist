@@ -2,6 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AIFeatureFunctionCalling</key>
+	<true/>
+	<key>AIFeatureHostedCodeInterpeter</key>
+	<true/>
+	<key>AIFeatureHostedFileSearch</key>
+	<true/>
+	<key>AIFeatureHostedWebSearch</key>
+	<true/>
+	<key>AIFeatureStreamingResponses</key>
+	<true/>
+	<key>AITermAPI</key>
+	<integer>2</integer>
+	<key>AIVectorStore</key>
+	<integer>0</integer>
+	<key>AiMaxTokens</key>
+	<integer>400000</integer>
+	<key>AiModel</key>
+	<string>gpt-5.1</string>
+	<key>AiResponseMaxTokens</key>
+	<integer>128000</integer>
+	<key>AitermURL</key>
+	<string>https://api.openai.com/v1/responses</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -155,6 +177,10 @@
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<false/>
+	<key>Mark Alert Action</key>
+	<string>Ring Bell</string>
+	<key>NSAutoFillHeuristicControllerEnabled</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{800, 448}</string>
 	<key>NSOSPLastRootDirectory</key>
@@ -187,8 +213,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 230.000000, 281.000000, NO, NO</string>
+		<string>0.000000, 282.000000, 230.000000, 48.000000, NO, NO</string>
 	</array>
 	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
 	<dict>
@@ -196,17 +222,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>-1920 868 224 278 -1920 520 1920 1055 </string>
+	<string>0 396 250 316 0 0 3200 1303 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>-1175 1165 430 195 -1920 520 1920 1055 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>-1160 935 400 139 -1920 253 1920 1049 </string>
+	<string>-1160 936 400 139 -1920 253 1920 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1270 741 620 398 -1920 253 1920 1049 </string>
+	<string>-1590 773 620 398 -1920 253 1920 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 253 1920 1049 -1920 253 1920 1049 </string>
+	<string>-1920 253 1920 1050 -1920 253 1920 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1920 253 1920 1055 -1920 253 1920 1055 </string>
+	<string>-1270 553 667 492 -1920 253 1920 1049 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1404,6 +1430,8 @@
 				<key>text</key>
 				<string>open -R \1</string>
 			</dict>
+			<key>Send Bell Alert</key>
+			<true/>
 			<key>Send Code When Idle</key>
 			<false/>
 			<key>Shortcut</key>
@@ -1466,27 +1494,38 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.6.5</string>
 		<string>3.5.12</string>
-		<string>3.5.13</string>
-		<string>3.5.10</string>
-		<string>3.5.14</string>
-		<string>3.5.11</string>
-		<string>3.6.2</string>
+		<string>3.6.11</string>
 		<string>3.6.1</string>
+		<string>3.6.8</string>
+		<string>3.5.11</string>
+		<string>3.6.10</string>
+		<string>3.6.6</string>
+		<string>3.5.10</string>
+		<string>3.6.4</string>
+		<string>3.6.2</string>
+		<string>3.6.9</string>
+		<string>3.5.14</string>
+		<string>3.5.13</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
 		<string>MesloLGM Nerd Font Mono</string>
 		<string>Monaco</string>
 	</array>
+	<key>NoSyncBrowserUpsell</key>
+	<true/>
+	<key>NoSyncBrowserUpsell_selection</key>
+	<integer>1</integer>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1920, 520}, {1920, 1080}}</string>
+		<string>{{0, 0}, {3200, 1333}}</string>
 		<key>topLeft</key>
-		<string>{-1457, 1323}</string>
+		<string>{608, 937}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -1497,7 +1536,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>066085C7-9760-45AE-9B38-E639233A055B</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 26.0 (Build 25A354)</string>
+	<string>Version 26.5.2 (Build 25F84)</string>
 	<key>NoSyncLastSystemPythonVersionRequirement</key>
 	<string>1.17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
@@ -2550,6 +2589,13 @@
 	<integer>1</integer>
 	<key>NoSyncRestoreWindowsCount</key>
 	<integer>0</integer>
+	<key>NoSyncSavedWindowPositions</key>
+	<dict>
+		<key>0</key>
+		<string>{-1920, 1303}</string>
+		<key>1</key>
+		<string>{-1270, 1045}</string>
+	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>757111498.72916102</real>
 	<key>NoSyncUserHasSelectedCommand</key>
@@ -2614,11 +2660,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2025-09-25T10:25:11Z</date>
+	<date>2026-07-19T12:40:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>4137465411</integer>
+	<integer>589875440</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2650,7 +2696,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.6.2</string>
+	<string>3.6.11</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -2,4 +2,4 @@
 #
 # Open current directory in Finder
 
-open -R .
+open -R "${1-.}"
