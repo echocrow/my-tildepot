@@ -9,6 +9,7 @@ export FILES="
   husky                 ~/.config/husky
   gitconfig             ~/.gitconfig
   gitignore             ~/.gitignore
+  homebrew              ~/.homebrew
   profile               ~/.profile
   zprofile              ~/.zprofile
 

@@ -1,0 +1,6 @@
+{
+  "trustedtaps": [
+    "echocrow/tap",
+    "withgraphite/tap"
+  ]
+}
