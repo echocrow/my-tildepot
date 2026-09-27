@@ -21,6 +21,10 @@ export FILES="
   [app-support]
   mouser                ~/Library/Application Support/mouser
 
+  [claude]
+    .claude.json            ~/.claude.json
+    statusline-command.sh   ~/.claude/statusline-command.sh
+
   [preferences]         @plutil
   launchservices.plist  ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist
   iterm2.plist          ~/Library/Preferences/com.googlecode.iterm2.plist
