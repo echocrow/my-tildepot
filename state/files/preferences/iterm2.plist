@@ -212,6 +212,16 @@
 	<string>Ring Bell</string>
 	<key>NSAutoFillHeuristicControllerEnabled</key>
 	<false/>
+	<key>NSAutomaticCapitalizationEnabled</key>
+	<false/>
+	<key>NSAutomaticDashSubstitutionEnabled</key>
+	<false/>
+	<key>NSAutomaticPeriodSubstitutionEnabled</key>
+	<false/>
+	<key>NSAutomaticQuoteSubstitutionEnabled</key>
+	<false/>
+	<key>NSAutomaticSpellingCorrectionEnabled</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{800, 448}</string>
 	<key>NSOSPLastRootDirectory</key>
@@ -259,7 +269,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>-1160 936 400 139 -1920 253 1920 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1290 678 620 398 0 0 3200 1303 </string>
+	<string>-1270 742 620 398 -1920 253 1920 1050 </string>
 	<key>NSWindow Frame iTerm Profile  0</key>
 	<string>-1920 253 1920 1050 -1920 253 1920 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1539,6 +1549,7 @@
 		<string>3.7.1</string>
 		<string>3.5.10</string>
 		<string>3.6.4</string>
+		<string>3.7.4</string>
 		<string>3.7.2</string>
 		<string>3.6.2</string>
 		<string>3.6.9</string>
@@ -1587,7 +1598,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>066085C7-9760-45AE-9B38-E639233A055B</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 27.0 (Build 26A428)</string>
+	<string>Version 27.0.1 (Build 26A434)</string>
 	<key>NoSyncLastShutdownWasClean</key>
 	<false/>
 	<key>NoSyncLastSystemPythonVersionRequirement</key>
@@ -1609,7 +1620,7 @@
 	<key>NoSyncPersistentRateLimitedUpdates</key>
 	<dict>
 		<key>CheckForUpdatedUv</key>
-		<real>812242155.96662498</real>
+		<real>813321300.21826196</real>
 	</dict>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
@@ -2735,7 +2746,23 @@
 	<key>NoSyncSuppressClipboardAccessDeniedWarning</key>
 	<true/>
 	<key>NoSyncSuppressedAlertsCatalog</key>
-	<dict/>
+	<dict>
+		<key>NoSyncBrowserUpsell</key>
+		<dict>
+			<key>count</key>
+			<integer>7</integer>
+			<key>episode</key>
+			<string>permanent</string>
+			<key>heading</key>
+			<string>Plugin Required</string>
+			<key>lastSuppressed</key>
+			<real>813079509.10831594</real>
+			<key>selectionLabel</key>
+			<string>Use System Browser</string>
+			<key>title</key>
+			<string>iTerm2 can display web pages! But first you must download the Browser Plugin.</string>
+		</dict>
+	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>757111498.72916102</real>
 	<key>NoSyncUserHasSelectedCommand</key>
@@ -2809,11 +2836,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2026-09-27T14:53:32Z</date>
+	<date>2026-10-10T10:33:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>1524493202</integer>
+	<integer>2744813365</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2880,7 +2907,7 @@
 	<key>findMode_iTerm</key>
 	<integer>2</integer>
 	<key>iTerm Version</key>
-	<string>3.7.3</string>
+	<string>3.7.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

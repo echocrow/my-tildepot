@@ -15,6 +15,34 @@
 			<key>LSHandlerRoleAll</key>
 			<string>us.zoom.xos</string>
 			<key>LSHandlerURLScheme</key>
+			<string>zoomphonecall</string>
+		</dict>
+		<dict>
+			<key>LSHandlerContentTag</key>
+			<string>fish</string>
+			<key>LSHandlerContentTagClass</key>
+			<string>public.filename-extension</string>
+			<key>LSHandlerModificationDate</key>
+			<integer>0</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.sublimetext.4</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>0</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>us.zoom.xos</string>
+			<key>LSHandlerURLScheme</key>
 			<string>zoomphonesms</string>
 		</dict>
 		<dict>
@@ -45,7 +73,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -73,7 +101,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155755</integer>
+			<integer>813234900</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -86,7 +114,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>811968427</integer>
+			<integer>813247239</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -99,7 +127,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812025538</integer>
+			<integer>813232884</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -203,7 +231,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812213345</integer>
+			<integer>813350085</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -242,7 +270,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -350,7 +378,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -363,7 +391,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -376,7 +404,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812025538</integer>
+			<integer>813232883</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -402,7 +430,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -415,7 +443,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -428,7 +456,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -441,7 +469,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -454,7 +482,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -467,7 +495,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -480,7 +508,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155761</integer>
+			<integer>813180408</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -493,7 +521,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812027500</integer>
+			<integer>813196121</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -506,7 +534,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155763</integer>
+			<integer>812975722</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -688,7 +716,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812155764</integer>
+			<integer>813243941</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -714,7 +742,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>809266344</integer>
+			<integer>812546038</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -776,34 +804,6 @@
 			<string>org.whispersystems.signal-desktop</string>
 			<key>LSHandlerURLScheme</key>
 			<string>signalcaptcha</string>
-		</dict>
-		<dict>
-			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>us.zoom.xos</string>
-			<key>LSHandlerURLScheme</key>
-			<string>zoomphonecall</string>
-		</dict>
-		<dict>
-			<key>LSHandlerContentTag</key>
-			<string>fish</string>
-			<key>LSHandlerContentTagClass</key>
-			<string>public.filename-extension</string>
-			<key>LSHandlerModificationDate</key>
-			<integer>0</integer>
-			<key>LSHandlerPreferredVersions</key>
-			<dict>
-				<key>LSHandlerRoleAll</key>
-				<string>-</string>
-			</dict>
-			<key>LSHandlerRoleAll</key>
-			<string>com.sublimetext.4</string>
 		</dict>
 	</array>
 </dict>
