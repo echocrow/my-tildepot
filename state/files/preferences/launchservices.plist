@@ -6,6 +6,32 @@
 	<array>
 		<dict>
 			<key>LSHandlerModificationDate</key>
+			<integer>816366678</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>com.t3tools.t3code</string>
+			<key>LSHandlerURLScheme</key>
+			<string>t3code</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
+			<integer>795438768</integer>
+			<key>LSHandlerPreferredVersions</key>
+			<dict>
+				<key>LSHandlerRoleAll</key>
+				<string>-</string>
+			</dict>
+			<key>LSHandlerRoleAll</key>
+			<string>org.whispersystems.signal-desktop</string>
+			<key>LSHandlerURLScheme</key>
+			<string>signalcaptcha</string>
+		</dict>
+		<dict>
+			<key>LSHandlerModificationDate</key>
 			<integer>0</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
@@ -73,7 +99,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -101,7 +127,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813234900</integer>
+			<integer>816264461</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -114,7 +140,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813247239</integer>
+			<integer>815408688</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -127,7 +153,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813232884</integer>
+			<integer>816264401</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -231,7 +257,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813350085</integer>
+			<integer>816392877</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -270,7 +296,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -378,7 +404,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -391,7 +417,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -404,7 +430,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813232883</integer>
+			<integer>816301080</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -430,7 +456,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -443,7 +469,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -456,7 +482,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -469,7 +495,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -482,7 +508,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -495,7 +521,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -508,7 +534,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813180408</integer>
+			<integer>816272475</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -521,7 +547,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813196121</integer>
+			<integer>816266449</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -534,7 +560,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812975722</integer>
+			<integer>816353241</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -716,7 +742,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>813243941</integer>
+			<integer>816301138</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -742,7 +768,7 @@
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
-			<integer>812546038</integer>
+			<integer>815939886</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
@@ -780,17 +806,17 @@
 			<string>com.sublimetext.4</string>
 		</dict>
 		<dict>
+			<key>LSHandlerContentType</key>
+			<string>public.mpeg-2-transport-stream</string>
 			<key>LSHandlerModificationDate</key>
-			<integer>795438768</integer>
+			<integer>816266214</integer>
 			<key>LSHandlerPreferredVersions</key>
 			<dict>
 				<key>LSHandlerRoleAll</key>
 				<string>-</string>
 			</dict>
 			<key>LSHandlerRoleAll</key>
-			<string>org.whispersystems.signal-desktop</string>
-			<key>LSHandlerURLScheme</key>
-			<string>sgnl</string>
+			<string>com.sublimetext.4</string>
 		</dict>
 		<dict>
 			<key>LSHandlerModificationDate</key>
@@ -803,7 +829,7 @@
 			<key>LSHandlerRoleAll</key>
 			<string>org.whispersystems.signal-desktop</string>
 			<key>LSHandlerURLScheme</key>
-			<string>signalcaptcha</string>
+			<string>sgnl</string>
 		</dict>
 	</array>
 </dict>

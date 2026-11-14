@@ -117,6 +117,7 @@ actions:
     branches:
       /Applications/iTerm.app: null
       /Applications/Notion Calendar.app: mac:quit-app
+      /Applications/T3 Code (Beta).app: mac:hide-window
       ~/Applications/YouTube Music.app: mac:hide-window
     fallback: mac:close-window
 
