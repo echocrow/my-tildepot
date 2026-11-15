@@ -26,6 +26,10 @@ export FILES="
     .claude.json            ~/.claude.json
     statusline-command.sh   ~/.claude/statusline-command.sh
 
+  [t3]
+  settings.json         ~/.t3/userdata/settings.json
+  themes                ~/.t3/userdata/themes
+
   [preferences]         @plutil
   launchservices.plist  ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist
   iterm2.plist          ~/Library/Preferences/com.googlecode.iterm2.plist
