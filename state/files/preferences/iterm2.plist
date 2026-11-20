@@ -1556,6 +1556,7 @@
 		<string>3.6.1</string>
 		<string>3.6.6</string>
 		<string>3.5.14</string>
+		<string>3.7.8</string>
 		<string>3.7.2</string>
 		<string>3.7.7</string>
 		<string>3.6.5</string>
@@ -1567,6 +1568,8 @@
 		<string>MesloLGM Nerd Font Mono</string>
 		<string>Monaco</string>
 	</array>
+	<key>NoSyncBackupUpdateLastCheck</key>
+	<date>2026-11-19T13:42:16Z</date>
 	<key>NoSyncBrowserUpsell</key>
 	<true/>
 	<key>NoSyncBrowserUpsell_selection</key>
@@ -1580,6 +1583,8 @@
 	<key>NoSyncClaudeCodeHooksInstalled</key>
 	<true/>
 	<key>NoSyncClaudeCodeIntegrationCompleted</key>
+	<true/>
+	<key>NoSyncClaudeCodeReviewModelSelectorBackfilled</key>
 	<true/>
 	<key>NoSyncClaudeCodeReviewSettingsCommandBackfilled</key>
 	<true/>
@@ -1629,7 +1634,7 @@
 	<key>NoSyncPersistentRateLimitedUpdates</key>
 	<dict>
 		<key>CheckForUpdatedUv</key>
-		<real>816451066.888767</real>
+		<real>816874815.84194696</real>
 	</dict>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
@@ -3037,6 +3042,8 @@
 	<integer>1</integer>
 	<key>NoSyncRestoreWindowsCount</key>
 	<integer>0</integer>
+	<key>NoSyncRolloutBucketUseTaskIOMonitors</key>
+	<integer>40</integer>
 	<key>NoSyncSavedWindowPositions</key>
 	<dict>
 		<key> 0</key>
@@ -3055,13 +3062,13 @@
 		<key>NoSyncBrowserUpsell</key>
 		<dict>
 			<key>count</key>
-			<integer>13</integer>
+			<integer>14</integer>
 			<key>episode</key>
 			<string>permanent</string>
 			<key>heading</key>
 			<string>Plugin Required</string>
 			<key>lastSuppressed</key>
-			<real>816286270.824772</real>
+			<real>816612480.18563104</real>
 			<key>selectionLabel</key>
 			<string>Use System Browser</string>
 			<key>title</key>
@@ -3138,20 +3145,16 @@
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
-	<key>SUFeedAlternateAppNameKey</key>
-	<string>iTerm</string>
-	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_modern.xml?shard=65</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2026-11-14T13:06:35Z</date>
+	<date>2026-11-20T12:28:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>986991370</integer>
+	<integer>2749867344</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>Secure Input</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -3184,38 +3187,39 @@
 	<false/>
 	<key>Workgroups</key>
 	<data>
-	W3sibmFtZSI6IkNsYXVkZSBDb2RlIiwic2Vzc2lvbnMiOlt7InVybFN0cmluZyI6IiIs
-	InRvb2xiYXJJdGVtcyI6W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6Imdp
-	dFN0YXR1cyJ9LHsia2luZCI6ImF1dG9SZXF1ZXN0UmV2aWV3V2hlbklkbGUifV0sImtp
-	bmQiOnsia2luZCI6InJvb3QifSwicGVyRmlsZUNvbW1hbmQiOiIiLCJjb21tYW5kIjoi
-	IiwibW9kZSI6InJlZ3VsYXIiLCJkaXNwbGF5TmFtZSI6IkNoYXQiLCJ1bmlxdWVJZGVu
-	dGlmaWVyIjoiYnVpbHRpbi5jbGF1ZGVDb2RlLm1haW4ifSx7InBhcmVudElEIjoiYnVp
-	bHRpbi5jbGF1ZGVDb2RlLm1haW4iLCJ1cmxTdHJpbmciOiIiLCJ0b29sYmFySXRlbXMi
-	Olt7ImtpbmQiOiJtb2RlU3dpdGNoZXIifSx7ImtpbmQiOiJjaGFuZ2VkRmlsZVNlbGVj
-	dG9yIn0seyJraW5kIjoiZ2l0QmFzZVNlbGVjdG9yIn0seyJyZWxvYWRTaG9ydGN1dCI6
-	eyJzZXJpYWxpemVkIjoiMHg3Mi0weDEwMDAwMC0weGYifSwiYmFja1Nob3J0Y3V0Ijp7
-	InNlcmlhbGl6ZWQiOiIweGY3MDItMHgzNDAwMDAtMHg3YiJ9LCJmb3J3YXJkU2hvcnRj
-	dXQiOnsic2VyaWFsaXplZCI6IjB4ZjcwMy0weDM0MDAwMC0weDdjIn0sImtpbmQiOiJu
-	YXZpZ2F0aW9uIn1dLCJraW5kIjp7ImtpbmQiOiJwZWVyIn0sInBlckZpbGVDb21tYW5k
-	IjoiZ2l0IGRpZmZ0b29sIC15IC14IHZpbWRpZmYgXFwoZ2l0QmFzZSkgLS0gXFwoZmls
-	ZSkiLCJjb21tYW5kIjoiZ2l0IGRpZmZ0b29sIC15IC14IHZpbWRpZmYgXFwoZ2l0QmFz
-	ZSkiLCJtb2RlIjoiZGlmZiIsImRpc3BsYXlOYW1lIjoiRGlmZiIsInVuaXF1ZUlkZW50
-	aWZpZXIiOiJidWlsdGluLmNsYXVkZUNvZGUuZGlmZiJ9LHsicGFyZW50SUQiOiJidWls
-	dGluLmNsYXVkZUNvZGUubWFpbiIsInVybFN0cmluZyI6IiIsInRvb2xiYXJJdGVtcyI6
-	W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsic2hvcnRjdXQiOnsic2VyaWFsaXplZCI6
-	IjB4NzItMHgxMDAwMDAtMHhmIn0sImtpbmQiOiJyZWxvYWQifSx7ImtpbmQiOiJhdXRv
-	U2VuZENsaXBwaW5nc1doZW5JZGxlIn1dLCJraW5kIjp7ImtpbmQiOiJwZWVyIn0sInBl
-	ckZpbGVDb21tYW5kIjoiIiwiY29tbWFuZCI6ImNsYXVkZSBcXChjb2RlUmV2aWV3UHJv
-	bXB0KSAtLWFwcGVuZC1zeXN0ZW0tcHJvbXB0LWZpbGUgJ1xcKGNvZGVSZXZpZXdTeXN0
-	ZW1Qcm9tcHRGaWxlKScgLS1zZXR0aW5ncyAnXFwoY29kZVJldmlld1NldHRpbmdzRmls
-	ZSknIiwibW9kZSI6ImNvZGVSZXZpZXciLCJkaXNwbGF5TmFtZSI6IkNvZGUgUmV2aWV3
-	IiwidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5yZXZpZXcifV0s
-	InVuaXF1ZUlkZW50aWZpZXIiOiJidWlsdGluLmNsYXVkZUNvZGUifV0=
+	W3sidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZSIsIm5hbWUiOiJD
+	bGF1ZGUgQ29kZSIsInNlc3Npb25zIjpbeyJkaXNwbGF5TmFtZSI6IkNoYXQiLCJwZXJG
+	aWxlQ29tbWFuZCI6IiIsImtpbmQiOnsia2luZCI6InJvb3QifSwidG9vbGJhckl0ZW1z
+	IjpbeyJraW5kIjoibW9kZVN3aXRjaGVyIn0seyJraW5kIjoiZ2l0U3RhdHVzIn0seyJr
+	aW5kIjoiYXV0b1JlcXVlc3RSZXZpZXdXaGVuSWRsZSJ9XSwidXJsU3RyaW5nIjoiIiwi
+	bW9kZSI6InJlZ3VsYXIiLCJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRpbi5jbGF1ZGVD
+	b2RlLm1haW4iLCJjb21tYW5kIjoiIn0seyJwYXJlbnRJRCI6ImJ1aWx0aW4uY2xhdWRl
+	Q29kZS5tYWluIiwicGVyRmlsZUNvbW1hbmQiOiJnaXQgZGlmZnRvb2wgLXkgLXggdmlt
+	ZGlmZiBcXChnaXRCYXNlKSAtLSBcXChmaWxlKSIsImtpbmQiOnsia2luZCI6InBlZXIi
+	fSwiZGlzcGxheU5hbWUiOiJEaWZmIiwidG9vbGJhckl0ZW1zIjpbeyJraW5kIjoibW9k
+	ZVN3aXRjaGVyIn0seyJraW5kIjoiY2hhbmdlZEZpbGVTZWxlY3RvciJ9LHsia2luZCI6
+	ImdpdEJhc2VTZWxlY3RvciJ9LHsicmVsb2FkU2hvcnRjdXQiOnsic2VyaWFsaXplZCI6
+	IjB4NzItMHgxMDAwMDAtMHhmIn0sImZvcndhcmRTaG9ydGN1dCI6eyJzZXJpYWxpemVk
+	IjoiMHhmNzAzLTB4MzQwMDAwLTB4N2MifSwia2luZCI6Im5hdmlnYXRpb24iLCJiYWNr
+	U2hvcnRjdXQiOnsic2VyaWFsaXplZCI6IjB4ZjcwMi0weDM0MDAwMC0weDdiIn19XSwi
+	dXJsU3RyaW5nIjoiIiwibW9kZSI6ImRpZmYiLCJ1bmlxdWVJZGVudGlmaWVyIjoiYnVp
+	bHRpbi5jbGF1ZGVDb2RlLmRpZmYiLCJjb21tYW5kIjoiZ2l0IGRpZmZ0b29sIC15IC14
+	IHZpbWRpZmYgXFwoZ2l0QmFzZSkifSx7InBhcmVudElEIjoiYnVpbHRpbi5jbGF1ZGVD
+	b2RlLm1haW4iLCJwZXJGaWxlQ29tbWFuZCI6IiIsImtpbmQiOnsia2luZCI6InBlZXIi
+	fSwiZGlzcGxheU5hbWUiOiJDb2RlIFJldmlldyIsInRvb2xiYXJJdGVtcyI6W3sia2lu
+	ZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6InJlbG9hZCIsInNob3J0Y3V0Ijp7InNl
+	cmlhbGl6ZWQiOiIweDcyLTB4MTAwMDAwLTB4ZiJ9fSx7ImtpbmQiOiJjb2RlUmV2aWV3
+	TW9kZWxTZWxlY3RvciJ9LHsia2luZCI6ImF1dG9TZW5kQ2xpcHBpbmdzV2hlbklkbGUi
+	fV0sInVybFN0cmluZyI6IiIsIm1vZGUiOiJjb2RlUmV2aWV3IiwidW5pcXVlSWRlbnRp
+	ZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5yZXZpZXciLCJjb21tYW5kIjoiY2xhdWRl
+	IFxcKGNvZGVSZXZpZXdNb2RlbEZsYWcpIFxcKGNvZGVSZXZpZXdQcm9tcHQpIC0tYXBw
+	ZW5kLXN5c3RlbS1wcm9tcHQtZmlsZSAnXFwoY29kZVJldmlld1N5c3RlbVByb21wdEZp
+	bGUpJyAtLXNldHRpbmdzICdcXChjb2RlUmV2aWV3U2V0dGluZ3NGaWxlKScifV19XQ==
 	</data>
 	<key>findMode_iTerm</key>
 	<integer>2</integer>
 	<key>iTerm Version</key>
-	<string>3.7.7</string>
+	<string>3.7.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
