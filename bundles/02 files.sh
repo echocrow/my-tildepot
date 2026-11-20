@@ -30,6 +30,9 @@ export FILES="
   settings.json         ~/.t3/userdata/settings.json
   themes                ~/.t3/userdata/themes
 
+  [cursor]
+  extension_cursor-dark-classic  ~/.cursor/extensions/local.cursor-dark-classic-1.0.0
+
   [preferences]         @plutil
   launchservices.plist  ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist
   iterm2.plist          ~/Library/Preferences/com.googlecode.iterm2.plist
