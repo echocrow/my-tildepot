@@ -23,8 +23,8 @@ export FILES="
   mouser                ~/Library/Application Support/mouser
 
   [claude]
-    .claude.json            ~/.claude.json
-    statusline-command.sh   ~/.claude/statusline-command.sh
+  .claude.json            ~/.claude.json
+  statusline-command.sh   ~/.claude/statusline-command.sh
 
   [t3]
   settings.json         ~/.t3/userdata/settings.json
