@@ -1,0 +1,27 @@
+{
+	"name": "cursor-dark-classic",
+	"displayName": "Cursor Dark Classic",
+	"description": "Pre-3.31 Cursor Dark, from a theme export",
+	"version": "1.0.0",
+	"publisher": "local",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Cursor Dark Classic",
+				"uiTheme": "vs-dark",
+				"path": "./themes/cursor-dark-classic-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1795182124626,
+		"targetPlatform": "undefined",
+		"size": 51450
+	}
+}
