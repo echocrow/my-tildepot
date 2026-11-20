@@ -24,6 +24,7 @@ export FILES="
 
   [claude]
   .claude.json            ~/.claude.json
+  settings.json           ~/.claude/settings.json
   statusline-command.sh   ~/.claude/statusline-command.sh
 
   [t3]
